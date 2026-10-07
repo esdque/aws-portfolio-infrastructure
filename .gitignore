@@ -1,0 +1,36 @@
+# Terraform state files — NEVER commit these. They contain secrets.
+*.tfstate
+*.tfstate.backup
+*.tfstate.*.backup
+
+# Terraform directory (downloaded plugins — large and machine-specific)
+.terraform/
+
+# Terraform plan files (binary files, not human-readable in Git)
+*.tfplan
+
+# Variable files that may contain secrets
+*.tfvars.local
+*.auto.tfvars
+
+# Crash logs
+crash.log
+crash.*.log
+
+# Override files
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+
+# Lock file is kept in Git (tracks provider versions for reproducibility)
+# .terraform.lock.hcl  ← do NOT gitignore this one
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor files
+.vscode/settings.json
+*.swp
+*.swo
