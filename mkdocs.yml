@@ -1,0 +1,175 @@
+site_name: AWS Portfolio — IaC Platform
+site_description: Enterprise Infrastructure-as-Code Platform · Terraform Module Library & CI/CD Foundation
+site_author: Rahmat Hassan
+site_url: https://YOUR-GITHUB-USERNAME.github.io/aws-portfolio-infrastructure
+
+repo_name: aws-portfolio-infrastructure
+repo_url: https://github.com/YOUR-GITHUB-USERNAME/aws-portfolio-infrastructure
+edit_uri: edit/main/docs/
+
+theme:
+  name: material
+  palette:
+    - scheme: default
+      primary: indigo
+      accent: blue
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - scheme: slate
+      primary: indigo
+      accent: blue
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  font:
+    text: Inter
+    code: JetBrains Mono
+  features:
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+    - navigation.footer
+    - search.highlight
+    - search.suggest
+    - search.share
+    - content.code.copy
+    - content.code.annotate
+    - content.tabs.link
+    - toc.follow
+    - announce.dismiss
+  icon:
+    repo: fontawesome/brands/github
+    admonition:
+      note: octicons/tag-16
+      tip: octicons/squirrel-16
+      warning: octicons/alert-16
+      danger: octicons/zap-16
+      success: octicons/check-16
+      info: octicons/info-16
+
+plugins:
+  - search:
+      lang: en
+  - glightbox:
+      touchNavigation: true
+      loop: false
+      effect: zoom
+      width: 100%
+      height: auto
+      zoomable: true
+      draggable: true
+  - git-revision-date-localized:
+      enable_creation_date: true
+      type: date
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.critic
+  - pymdownx.caret
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.tilde
+  - attr_list
+  - md_in_html
+  - tables
+  - footnotes
+  - def_list
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+
+nav:
+  - Home: index.md
+
+  - Getting Started:
+    - Quick Start: getting-started/index.md
+    - Prerequisites: getting-started/prerequisites.md
+    - Bootstrap (First Run): getting-started/bootstrap.md
+
+  - Architecture:
+    - System Overview: architecture/index.md
+    - Decisions (ADRs):
+      - ADR-001 · Terraform vs CloudFormation: architecture/decisions/001-terraform-vs-cloudformation.md
+      - ADR-002 · S3+DynamoDB vs Terraform Cloud: architecture/decisions/002-s3-dynamodb-vs-terraform-cloud.md
+      - ADR-003 · Directories vs Workspaces: architecture/decisions/003-directories-vs-workspaces.md
+      - ADR-004 · Checkov + OPA vs Single Tool: architecture/decisions/004-checkov-plus-opa.md
+      - ADR-005 · OIDC vs Access Keys: architecture/decisions/005-oidc-vs-access-keys.md
+
+  - Module Library:
+    - Overview: modules/index.md
+    - VPC: modules/vpc.md
+    - IAM: modules/iam.md
+    - EC2: modules/ec2.md
+    - RDS: modules/rds.md
+    - ECS: modules/ecs.md
+    - EKS: modules/eks.md
+    - CloudFront: modules/cloudfront.md
+    - Monitoring: modules/monitoring.md
+
+  - Environments:
+    - Overview: environments/index.md
+    - Development: environments/dev.md
+    - Staging: environments/staging.md
+    - Production: environments/production.md
+
+  - CI/CD Pipeline:
+    - How It Works: cicd/index.md
+    - PR Validation: cicd/pr-workflow.md
+    - Auto Apply: cicd/apply-workflow.md
+    - Security Scanning: cicd/security-scanning.md
+
+  - Security:
+    - Threat Model: security/threat-model.md
+    - Well-Architected Review: security/well-architected.md
+
+  - Cost:
+    - Full Cost Analysis: cost/analysis.md
+
+  - Operations:
+    - Day-to-Day Runbook: operations/runbook.md
+    - State Recovery: operations/state-recovery.md
+    - Drift Detection: operations/drift-detection.md
+    - Incident Response: operations/incident-response.md
+
+  - Testing:
+    - Terratest Guide: testing/index.md
+
+  - Evidence:
+    - What Was Deployed: evidence/index.md
+    - Bootstrap Evidence: evidence/bootstrap.md
+    - CI/CD Evidence: evidence/cicd.md
+    - Module Evidence: evidence/modules.md
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/YOUR-GITHUB-USERNAME
+    - icon: fontawesome/brands/linkedin
+      link: https://linkedin.com/in/YOUR-LINKEDIN-USERNAME
+  generator: false
+
+extra_css:
+  - assets/stylesheets/extra.css
+
+copyright: >
+  Copyright &copy; 2025 Rahmat Hassan &nbsp;·&nbsp;
+  <a href="#__consent">Change cookie settings</a>

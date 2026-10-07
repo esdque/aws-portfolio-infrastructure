@@ -1,0 +1,37 @@
+repos:
+  - repo: https://github.com/antonbabenko/pre-commit-terraform
+    rev: v1.88.0
+    hooks:
+      - id: terraform_fmt
+        args: [--args=-recursive]
+      - id: terraform_validate
+        args: [--tf-init-args=-backend=false]
+      - id: terraform_tflint
+        args:
+          - --args=--config=__GIT_WORKING_DIR__/.tflint.hcl
+      - id: terraform_checkov
+        args:
+          - --args=--quiet
+          - --args=--framework=terraform
+          - --args=--output=sarif
+          - --args=--output-file-path=checkov-results
+      - id: terraform_docs
+        args:
+          - --hook-config=--create-file-if-not-exist=true
+
+  - repo: https://github.com/Yelp/detect-secrets
+    rev: v1.4.0
+    hooks:
+      - id: detect-secrets
+        args: [--baseline, .secrets.baseline]
+
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.5.0
+    hooks:
+      - id: no-commit-to-branch
+        args: [--branch, main]
+      - id: trailing-whitespace
+      - id: end-of-file-fixer
+      - id: check-merge-conflict
+      - id: check-yaml
+      - id: check-json

@@ -1,0 +1,46 @@
+/* ============================================================
+   Extra styles for AWS Portfolio documentation site
+   ============================================================ */
+
+/* Evidence screenshot captions */
+.screenshot-caption {
+  text-align: center;
+  font-size: 0.85em;
+  color: var(--md-default-fg-color--light);
+  margin-top: -0.8em;
+  margin-bottom: 1.2em;
+  font-style: italic;
+}
+
+/* Phase badges in evidence pages */
+.phase-badge {
+  display: inline-block;
+  padding: 0.15em 0.6em;
+  border-radius: 4px;
+  font-size: 0.75em;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  background-color: var(--md-primary-fg-color);
+  color: var(--md-primary-bg-color);
+  margin-right: 0.4em;
+}
+
+/* Wider content area for architecture diagrams */
+.md-content__inner {
+  max-width: 900px;
+}
+
+/* Evidence gallery grid */
+.evidence-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1rem;
+  margin: 1.2em 0;
+}
+
+/* Cost table highlight */
+.cost-highlight {
+  font-weight: 700;
+  color: var(--md-primary-fg-color);
+}
